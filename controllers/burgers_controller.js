@@ -1,7 +1,7 @@
 
 var express = require('express');
 var router = express.Router();
-var burger = require('../models/burger.js');
+var models = require('../models');
 
 
 router.get("/", function(req,res){
@@ -13,6 +13,14 @@ router.get("/burgers", function(req,res){
 		var hbsObject = {burgers: data};
 		console.log(hbsObject);
 		res.render("index", hbsObject);
+	});
+
+	/////IN TESTING
+	models.Burger.findAll()
+	.then(function(burgers){
+		res.render("index", {
+
+		});
 	});
 });
 
