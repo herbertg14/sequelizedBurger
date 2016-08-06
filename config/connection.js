@@ -16,11 +16,11 @@ var connection = mysql.createConnection({
 	database: "burgers_db"
 });
 
-var sequelize = new Sequelize('burgers_db', 'root', 'enter', {
-  host: 'localhost',
-  dialect: 'mysql'
-  }
-});
+// var sequelize = new Sequelize('burgers_db', 'root', 'enter', {
+//   host: 'localhost',
+//   dialect: 'mysql'
+//   }
+// });
 
 connection.connect(function(err){
 	if (err){
@@ -30,5 +30,5 @@ connection.connect(function(err){
 	console.log("connected as id " + connection.threadId);
 });
 
-// module.exports = connection;
-module.exports = sequelize;
+module.exports = connection;
+// module.exports = sequelize;
