@@ -2,6 +2,12 @@ express = require ("express");
 methodOverride = require("method-override");
 bodyParser = require("body-parser");
 
+//add character model and sync it 
+var Burger = require("./models")["Burgers"];
+
+//creating the burger table. 
+Burger.sync();
+
 var app = express();
 
 // check if this is right
