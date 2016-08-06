@@ -10,12 +10,8 @@ router.get("/", function(req,res){
 });
 
 router.get("/burgers", function(req,res){
-	// burger.selectAll(function(data){
-	// 	var hbsObject = {burgers: data};
-	// 	console.log(hbsObject);
-	// 	res.render("index", hbsObject);
-	// });
-	console.log("in burgers");
+
+	// console.log("in burgers");
 	Burger.findAll()
 	.then(function(burgers){
 		// console.log(JSON.stringify(burgers));
@@ -26,9 +22,7 @@ router.get("/burgers", function(req,res){
 });
 
 router.post("/burgers/create", function(req, res){
-	// burger.insertOne(["burger_name"], [req.body.name], function(data){
-	// 	res.redirect("/burgers");
-	// });
+
 	Burger.create({
 		burger_name: req.body.name,
 		devoured: false
@@ -39,11 +33,7 @@ router.post("/burgers/create", function(req, res){
 });
 
 router.put("/burgers/update/:id", function(req, res){
-	// var condition = "id = " + req.params.id;
-	
-	// burger.updateOne({"devoured": 1}, condition, function(data){
-	// 	res.redirect("/burgers");
-	// });
+
 	Burger.update({
 		devoured: true
 	},{
