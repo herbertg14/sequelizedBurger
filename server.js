@@ -3,10 +3,10 @@ methodOverride = require("method-override");
 bodyParser = require("body-parser");
 
 //add character model and sync it 
-var Burger = require("./models")["Burgers"];
+// var Burger = require("./models")["Burgers"];
 
 //creating the burger table. 
-Burger.sync();
+// Burger.sync();
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 var routes = require("./controllers/burgers_controller.js");
-app.use("/",routes);
+app.use("/", routes);
 
 var PORT = process.env.PORT || 5000;
 app.listen(PORT);
